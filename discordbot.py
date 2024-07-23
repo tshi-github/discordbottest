@@ -17,8 +17,6 @@ async def start(ctx):
    weekday_message = await checkweekday()
 
    dt_now = datetime.datetime.now()
-   print('ha')
-
    if dt_now.hour == 12:
     await ctx.send(weekday_message)
 
