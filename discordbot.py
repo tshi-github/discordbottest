@@ -29,4 +29,4 @@ async def checkweekday():
     else:
        return "ふっ"
 
-bot.run(TOKEN)
+bot.run('TOKEN')
