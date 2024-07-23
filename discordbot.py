@@ -31,4 +31,4 @@ async def checkweekday():
         return "日頃の仕事しろ！"
 
 token = getenv('TOKEN')
-bot.run('TOKEN')
+bot.run('token')
