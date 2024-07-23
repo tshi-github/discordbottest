@@ -1,25 +1,34 @@
 import discord
-import traceback
 from discord.ext import commands
-from os import getenv
+
+import datetime
+today = datetime.date.today()
 
 intents = discord.Intents.default()
 intents.message_content = True
-
-bot = commands.Bot(command_prefix='/', intents=intents)
-
+bot = commands.Bot(command_prefix='>', intents=intents)
 
 @bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
-
+async def on_ready():
+    print(f'Logged in as {bot.user}')
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
+async def start(ctx):
+   weekday_message = await checkweekday()
 
+   dt_now = datetime.datetime.now()
 
-token = getenv('DISCORD_BOT_TOKEN')
-bot.run(token)
+   if dt_now.hour == 12:
+    await ctx.send(weekday_message)
+
+async def checkweekday():
+    if today.weekday() == 0:
+        return "水曜日の会議室の予約行け！！！"
+    elif today.weekday() == 3:
+        return "土日月の会議室の予約行け！！！"
+    elif today.weekday() == 1 & today.weekday() == 4:
+        return "学生課で警備室用の紙を回収せよ！！！"
+    else:
+       return "ふっ"
+    
+bot.run(TOKEN)
