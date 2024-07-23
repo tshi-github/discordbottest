@@ -1,12 +1,13 @@
 import discord
 from discord.ext import commands
+from os import getenv
 
 import datetime
 today = datetime.date.today()
 
 intents = discord.Intents.default()
 intents.message_content = True
-bot = commands.Bot(command_prefix='>', intents=intents)
+bot = commands.Bot(command_prefix='/', intents=intents)
 
 @bot.event
 async def on_ready():
@@ -29,4 +30,5 @@ async def checkweekday():
     else:
         return "日頃の仕事しろ！"
 
-bot.run('TOKEN')
+token = getenv('TOKEN')
+bot.run(token)
