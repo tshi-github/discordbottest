@@ -17,7 +17,7 @@ async def on_ready():
 async def start(ctx):
     weekday_message = await checkweekday()
     dt_now = datetime.datetime.now()
-    if dt_now.hour == 16:
+    if dt_now.hour == 13:
         await ctx.send(weekday_message)
 
 async def checkweekday():
