@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from os import getenv
 
 import datetime
 today = datetime.date.today()
@@ -29,4 +30,5 @@ async def checkweekday():
     else:
         return "日頃の仕事しろ！"
 
+token = getenv('TOKEN')
 bot.run('TOKEN')
