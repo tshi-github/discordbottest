@@ -16,7 +16,6 @@ async def on_ready():
 @bot.command()
 async def start(ctx):
     weekday_message = await checkweekday()
-    dt_now = datetime.datetime.now()
     await ctx.send(weekday_message)
 
 async def checkweekday():
