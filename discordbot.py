@@ -18,8 +18,6 @@ async def start(ctx):
     weekday_message = await checkweekday()
     dt_now = datetime.datetime.now()
     await ctx.send(weekday_message)
-    #if dt_now.hour == 15:
-        #await ctx.send(weekday_message)
 
 async def checkweekday():
     if today.weekday() == 0:
