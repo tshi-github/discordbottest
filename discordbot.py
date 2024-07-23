@@ -23,7 +23,7 @@ async def check_time():
     if dt_now.hour == 11 and dt_now.minute == 35:
         weekday_message = await checkweekday()
         # CHANNEL_ID を実際のチャンネルIDに置き換えてください
-        channel = bot.get_channel('MTI1NDgyMDU1NzYwMjQyNjg5MA.Gcm0B_.HFpUJO07LQUr389ie9gym5J-5JO3oILuiR3SKY')
+        channel = bot.get_channel(TOKEN)
         if channel:
             await channel.send(weekday_message)
 
@@ -36,4 +36,4 @@ async def checkweekday():
     elif today.weekday() in [1, 4]:
         return "学生課で警備室用の紙を回収せよ！！！"
 
-bot.run('MTI1NDgyMDU1NzYwMjQyNjg5MA.Gcm0B_.HFpUJO07LQUr389ie9gym5J-5JO3oILuiR3SKY')
+bot.run(TOKEN)
