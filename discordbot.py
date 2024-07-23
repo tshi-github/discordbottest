@@ -23,7 +23,7 @@ async def check_time():
     if dt_now.hour == 11 and dt_now.minute == 35:
         weekday_message = await checkweekday()
         # CHANNEL_ID を実際のチャンネルIDに置き換えてください
-        channel = bot.get_channel(TOKEN)
+        channel = bot.get_channel(1228162726757535774)
         if channel:
             await channel.send(weekday_message)
 
