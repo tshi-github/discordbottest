@@ -21,5 +21,5 @@ async def ping(ctx):
     await ctx.send('pong')
 
 
-token = getenv('DISCORD_TOKEN')
+token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
