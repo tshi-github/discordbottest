@@ -27,6 +27,6 @@ async def checkweekday():
     elif today.weekday() == 1 & today.weekday() == 4:
         return "学生課で警備室用の紙を回収せよ！！！"
     else:
-       return "ふっ"
+       return "日頃の仕事しろ！"
 
 bot.run('TOKEN')
